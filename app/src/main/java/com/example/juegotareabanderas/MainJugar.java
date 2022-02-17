@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -28,6 +29,7 @@ public class MainJugar extends AppCompatActivity {
     CountDownTimer contanto;
     int respuestaaleatoria;
     Integer[] repetidos;
+    MediaPlayer audio;
     String[] nombre_ban ={"Alemania","Argentina","Baréin","Canadá","Catar","Chile","China","Colombia","Corea Del Norte","Corea Del Sur","El Salvador","España","Estados Unidos","Finlandia","Francia","Dinamarca","Indonesia","Israel","Italia","Japon","Kenia","Liberia","Madagascar","Mexico","Mónaco","Noruega","Perú","Polonia","Reino Unido","Rusia","Suecia","Suiza","Tonga","Venezuela","Islandia"};
     Integer[] bander ={R.drawable.alemania,R.drawable.argentina,R.drawable.barein,R.drawable.canada,R.drawable.catar,R.drawable.chile,R.drawable.china,R.drawable.colombia,R.drawable.corea_del_norte,R.drawable.corea_del_sur,R.drawable.el_salvador,R.drawable.espania_europa,R.drawable.estados_unidos,R.drawable.finlandia,R.drawable.francia,R.drawable.inamarca,R.drawable.indonesia,R.drawable.israel,R.drawable.italia,R.drawable.japon,R.drawable.kenia,R.drawable.liberia,R.drawable.madagascar,R.drawable.mexico,R.drawable.monaco,R.drawable.noruega,R.drawable.peru,R.drawable.polonia,R.drawable.reino_unido,R.drawable.russia,R.drawable.suecia,R.drawable.suiza,R.drawable.tonga,R.drawable.venezuela,R.drawable.islandia};
     ArrayList<String> nombreBa = new ArrayList<String>(Arrays.asList(nombre_ban));
@@ -67,6 +69,8 @@ public class MainJugar extends AppCompatActivity {
                 {
                     punt++;
                     cont++;
+                    audio =MediaPlayer.create(getApplicationContext(),R.raw.correct);
+                    audio.start();
                     respuesta1.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.green));
                     respuesta2.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.red));
                     respuesta3.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.red));
@@ -74,6 +78,8 @@ public class MainJugar extends AppCompatActivity {
                 }
                 else
                 {
+                    audio =MediaPlayer.create(getApplicationContext(),R.raw.incorrecto);
+                    audio.start();
                     respuesta1.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.red));
 
                     if(respuesta2.getText().toString().equals(nombre_ban[numerogenerado])) {
@@ -135,6 +141,8 @@ public class MainJugar extends AppCompatActivity {
                 {
                     punt++;
                     cont++;
+                    audio =MediaPlayer.create(getApplicationContext(),R.raw.correct);
+                    audio.start();
                     respuesta2.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.green));
                     respuesta1.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.red));
                     respuesta3.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.red));
@@ -142,6 +150,8 @@ public class MainJugar extends AppCompatActivity {
                 }
                 else
                 {
+                    audio =MediaPlayer.create(getApplicationContext(),R.raw.incorrecto);
+                    audio.start();
                     respuesta2.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.red));
 
                     if(respuesta1.getText().toString().equals(nombre_ban[numerogenerado])) {
@@ -202,6 +212,8 @@ public class MainJugar extends AppCompatActivity {
                 {
                     punt++;
                     cont++;
+                    audio =MediaPlayer.create(getApplicationContext(),R.raw.correct);
+                    audio.start();
                     respuesta3.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.green));
                     respuesta1.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.red));
                     respuesta2.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.red));
@@ -209,6 +221,8 @@ public class MainJugar extends AppCompatActivity {
                 }
                 else
                 {
+                    audio =MediaPlayer.create(getApplicationContext(),R.raw.incorrecto);
+                    audio.start();
                     respuesta3.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.red));
 
                     if(respuesta1.getText().toString().equals(nombre_ban[numerogenerado])) {

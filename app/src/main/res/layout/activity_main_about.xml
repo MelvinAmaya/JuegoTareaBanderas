@@ -24,7 +24,7 @@
         android:id="@+id/btnregresar"
         android:layout_width="373dp"
         android:layout_height="53dp"
-        android:text="¿Cómo se juega?"
+        android:text="regresar"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
